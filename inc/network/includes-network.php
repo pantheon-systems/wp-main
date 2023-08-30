@@ -496,28 +496,20 @@ function network_step2( $errors = false ) {
 		</label></p>
 		<textarea id="network-wpconfig-rules" class="code" readonly="readonly" cols="100" rows="31" aria-describedby="network-wpconfig-rules-description">
 <?php ob_start(); ?>
-if ( !empty( $_ENV['PANTHEON_ENVIRONMENT'] )) {
+// Check if running in Pantheon and not via CLI
+if ( !empty( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli') {
     $site_name = $_ENV['PANTHEON_SITE_NAME'];
     // Override $hostname value as needed.
     switch ( $_ENV['PANTHEON_ENVIRONMENT'] ) {
-        case 'live':
-            $hostname = $_SERVER['HTTP_HOST'];
-            break;
-        case 'test':
-            $hostname = 'test-' . $site_name . '.pantheonsite.io';
-            break;
-        case 'dev':
-            $hostname = 'dev-' . $site_name . '.pantheonsite.io';
-            break;
         case 'lando':
             $hostname = $site_name . '.lndo.site';
             break;
         default:
-            $hostname = $_ENV['PANTHEON_ENVIRONMENT'] . '-' . $site_name . '.pantheonsite.io';
+            $hostname = $_SERVER['HTTP_HOST'];
             break;
     }
 } else {
-    // Override with a default hostname.
+    // Override here with a default hostname if not using Lando for local development. 
     $hostname = '<?php echo $hostname ?>';
 }
 define( 'MULTISITE', true );
