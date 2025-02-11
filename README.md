@@ -106,7 +106,7 @@ Allows you to filter plugins with known compatibility issues on Pantheon so they
 			sprintf(
 				/* translators: %s: the link to relevant documentation. */
 				__( 'Read more about the issue <a href="%s" target="_blank">here</a>.', 'pantheon' ),
-				'https://docs.pantheon.io/plugins-known-issues#big-file-uploads'
+				'https://docs.pantheon.io/wordpress-known-issues#big-file-uploads'
 			)
 		),
 	],
@@ -117,7 +117,7 @@ Allows you to filter plugins with known compatibility issues on Pantheon so they
 			sprintf(
 				/* translators: %s: the link to relevant documentation. */
 				__( 'Read more about the issue <a href="%s" target="_blank">here</a>.', 'pantheon' ),
-				'https://docs.pantheon.io/plugins-known-issues#jetpack'
+				'https://docs.pantheon.io/wordpress-known-issues#jetpack'
 			)
 		),
 	],
@@ -128,7 +128,7 @@ Allows you to filter plugins with known compatibility issues on Pantheon so they
 			sprintf(
 				/* translators: %s: the link to relevant documentation. */
 				__( 'Read more about the issue <a href="%s" target="_blank">here</a>.', 'pantheon' ),
-				'https://docs.pantheon.io/plugins-known-issues#wordfence'
+				'https://docs.pantheon.io/wordpress-known-issues#wordfence'
 			)
 		),
 	],
